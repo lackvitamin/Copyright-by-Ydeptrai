@@ -1,20 +1,18 @@
-#define MaxLength 20
 #include <stdio.h>
+#define MaxLength 20
 typedef struct{
 float Elements[MaxLength];
 int Last;
-} List;
-void Make_Null(List *L)
-{
-    L->Last = 0;
+}List;
+void Make_Null(List *L){
+L->Last = 0;
 }
-void Insert_List(int P, float X, List *L)
-{
-    int Q;
-    for(Q=L->Last;Q>P-1;Q--)
-    L->Elements[Q]=L->Elements[Q-1];
-    L->Elements[P-1]=X;
-    L->Last++;
+void Insert_List(int P, float X, List *L){
+int Q;
+for(Q=L->Last;Q>P-1;Q--)
+L->Elements[Q]=L->Elements[Q-1];
+L->Elements[P-1]=X;
+L->Last++;
 }
 void Nhap_List(List *L)
 {
@@ -89,10 +87,10 @@ int main()
     List *L, l;
     L = &l;
     Nhap_List(L);
-        Xuat_List(L);
+    Xuat_List(L);
     Average(L);
     Delete_Point (L);
-        Xuat_List(L);
+    Xuat_List(L);
     Insert(L);
-        Xuat_List(L);
+    Xuat_List(L);
 }
