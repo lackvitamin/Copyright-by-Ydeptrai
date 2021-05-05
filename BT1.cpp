@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define MaxLength 20
+#define MaxLength 10
 typedef struct{
 float Elements[MaxLength];
 int Last;
@@ -46,8 +46,7 @@ void Average(List *L)
     A=A/(L->Last);
     printf("\nGia tri trung binh cua: %.2f\n",A);
 }
-void Insert(List *L)
-{
+void Insert(List *L){
     int P,i;
     char c;
     float X;
@@ -67,19 +66,11 @@ void Insert(List *L)
 void Delete_Point (List *L)
 {
     int Q,P;
-    do{
     printf("Nhap vi tri can xoa: ");
     scanf("%d",&P);
-    if((P<1) || (P>L->Last)){
-    printf("Vi tri khong co\n");
-    }
-    else{
     for(Q=P-1;Q<L->Last-1;Q++) L->Elements[Q]=L->Elements[Q+1];
     L->Last--;
     printf("Da xoa!\n");
-    break;
-    }
-    }while((P<1) || (P>=L->Last+1));
 }
 int main()
 {
