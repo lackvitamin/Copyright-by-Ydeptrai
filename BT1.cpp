@@ -34,9 +34,7 @@ void Nhap_List(List *L)
 void Xuat_List(List *L)
 {
     int i;
-    printf("List = [");
     for (i=0;i<L->Last;i++) printf(" %.2f",L->Elements[i]);
-    printf(" ]\n");
 }
 void Average(List *L)
 {
@@ -44,7 +42,7 @@ void Average(List *L)
     float A=0;
     for (i=0;i<L->Last;i++) A=A+L->Elements[i];
     A=A/(L->Last);
-    printf("\nGia tri trung binh cua: %.2f\n",A);
+    printf("\nGia tri trung binh: %.2f\n",A);
 }
 void Insert(List *L){
     int P,i;
@@ -52,7 +50,7 @@ void Insert(List *L){
     float X;
     do{
     fflush(stdin);
-    printf("Nhap phan tu moi vao: ");
+    printf("\nNhap phan tu moi: ");
     scanf("%f",&X);
     for(i=0;i<=L->Last;i++)
     if(X==L->Elements[i]){
@@ -72,11 +70,10 @@ void Delete_Point (List *L)
     L->Last--;
     printf("Da xoa!\n");
 }
-int main()
-{
+int main(){
     int i;
-    List *L, l;
-    L = &l;
+    List *L, a;
+    L = &a;
     Nhap_List(L);
     Xuat_List(L);
     Average(L);
