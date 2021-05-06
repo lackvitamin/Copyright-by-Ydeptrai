@@ -14,71 +14,64 @@ L->Elements[Q]=L->Elements[Q-1];
 L->Elements[P-1]=X;
 L->Last++;
 }
-void Nhap_List(List *L)
+void Nhap_List(List *L){
+int i,n;
+float X;
+Make_Null(L);
+do{
+printf("Nhap vao so luong phan tu: ");
+scanf("%d",&n);
+}while(n>=MaxLength);
+for(i=1;i<=n;i++)
 {
-    int i,n;
-    char c;
-    float X;
-    Make_Null(L);
-    do{
-    printf("Nhap vao so luong phan tu: ");
-    scanf("%d",&n);
-    }while(n>=MaxLength);
-    for(i=1;i<=n;i++)
-    {
-    printf("Nhap phan tu thu %d: ",i);
-    scanf("%f",&X);
-    Insert_List (i,X,L);
-    }
+printf("Nhap phan tu thu %d: ",i);
+scanf("%f",&X);
+Insert_List (i,X,L);
 }
-void Xuat_List(List *L)
-{
-    int i;
-    for (i=0;i<L->Last;i++) printf(" %.2f",L->Elements[i]);
 }
-void Average(List *L)
-{
-    int i;
-    float A=0;
-    for (i=0;i<L->Last;i++) A=A+L->Elements[i];
-    A=A/(L->Last);
-    printf("\nGia tri trung binh: %.2f\n",A);
+void Xuat_List(List *L){
+int i;
+for (i=0;i<L->Last;i++) printf(" %f",L->Elements[i]);
 }
-void Insert(List *L){
-    int P,i;
-    char c;
-    float X;
-    do{
-    fflush(stdin);
-    printf("\nNhap phan tu moi: ");
-    scanf("%f",&X);
-    for(i=0;i<=L->Last;i++)
-    if(X==L->Elements[i]){
-    printf("So da ton tai!\n");
-    i=L->Last+1;
-    }
-    }while(i!=L->Last+1);
-    Insert_List(1,X,L);
-    printf("Da them!\n");
+void TrungBinh(List *L){
+int i;
+float A=0;
+for (i=0;i<L->Last;i++) A=A+L->Elements[i];
+A=A/(L->Last);
+printf("\nGia tri trung binh: %f\n",A);
 }
-void Delete_Point (List *L)
-{
-    int Q,P;
-    printf("Nhap vi tri can xoa: ");
-    scanf("%d",&P);
-    for(Q=P-1;Q<L->Last-1;Q++) L->Elements[Q]=L->Elements[Q+1];
-    L->Last--;
-    printf("Da xoa!\n");
+void Chen_List(List *L){
+int P,i;
+float X;
+do{
+printf("\nNhap phan tu moi: ");
+scanf("%f",&X);
+for(i=0;i<=L->Last;i++)
+if(X==L->Elements[i]){
+printf("So da ton tai!");
+i=L->Last+1;
+}
+}
+while(i!=L->Last+1);
+Insert_List(1,X,L);
+printf("Da them!\n");
+}
+void Xoa_List(List *L){
+int Q,P;
+printf("Nhap vi tri can xoa: ");
+scanf("%d",&P);
+for(Q=P-1;Q<L->Last-1;Q++) L->Elements[Q]=L->Elements[Q+1];
+L->Last--;
+printf("Da xoa!\n");
 }
 int main(){
-    int i;
-    List *L, a;
-    L = &a;
-    Nhap_List(L);
-    Xuat_List(L);
-    Average(L);
-    Delete_Point (L);
-    Xuat_List(L);
-    Insert(L);
-    Xuat_List(L);
+List *L, a;
+L = &a;
+Nhap_List(L);
+Xuat_List(L);
+TrungBinh(L);
+Xoa_List(L);
+Xuat_List(L);
+Chen_List(L);
+Xuat_List(L);
 }
