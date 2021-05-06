@@ -4,6 +4,10 @@ typedef struct{
 float Elements[MaxLength];
 int Last;
 }List;
+void Xuat_List(List *L){
+int i;
+for (i=0;i<L->Last;i++) printf(" %f",L->Elements[i]);
+}
 void Make_Null(List *L){
 L->Last = 0;
 }
@@ -28,10 +32,6 @@ printf("Nhap phan tu thu %d: ",i);
 scanf("%f",&X);
 Insert_List (i,X,L);
 }
-}
-void Xuat_List(List *L){
-int i;
-for (i=0;i<L->Last;i++) printf(" %f",L->Elements[i]);
 }
 void TrungBinh(List *L){
 int i;

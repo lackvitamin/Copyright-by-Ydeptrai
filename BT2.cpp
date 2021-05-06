@@ -80,6 +80,7 @@ T=L->Next;
 L->Next=T->Next;
 free(T);
 }
+/*----------------------------*/
 int main(){
     N L;
     MakeNull(&L);
