@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void nhap(float a[], int n)
+void nhap (float a[], int n)
 {
     int i;
     for(i = 0; i < n; i++)
@@ -9,21 +9,24 @@ void nhap(float a[], int n)
         scanf("%f",&a[i]);
     }
 }
-void xuat(float a[], int n)
+
+void xuat (float a[], int n)
 {
     printf("Day so:");
     for (int i = 0; i < n; i++) printf(" %.2f",a[i]);
     printf("\n");
     getchar();
 }
-void swap(float *a, float *b)
+
+void swap (float *a, float *b)
 {
     float temp;
     temp = *a;
     *a = *b;
     *b = temp;
 }
-void bubbleSort(float a[], int n)
+
+void bubbleSort (float a[], int n)
 {
     int i,j;
     for (i=0; i<n-1; i++)
@@ -31,6 +34,7 @@ void bubbleSort(float a[], int n)
             if (a[j]<a[j-1])
                 swap(&a[j],&a[j-1]);
 }
+
 int main(){
     float a[10];
     int n;

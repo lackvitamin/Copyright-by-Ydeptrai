@@ -28,9 +28,8 @@ int findPivot(float a[], int i, int j)
     int k;
     for (k = i+1; (k<=j) && a[k]==a[i]; k++);   // Selects largest pivot in the firsts Elenment
     if (k>j) return -1; // Khong co Pivot
-    else if (a[k]>a[i])
-        return k;
-        else return i;
+    else if (a[k]>a[i]) return k;
+    else return i;
 }
 int partition(float a[], int i, int j, float pivot)
 {

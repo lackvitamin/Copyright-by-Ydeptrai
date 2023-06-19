@@ -9,12 +9,14 @@ void nhap(float a[], int n)
         scanf("%f",&a[i]);
     }
 }
+
 void xuat(float a[], int n)
 {
     printf("Day so:");
     for (int i = 0; i < n; i++) printf(" %.2f",a[i]);
     printf("\n");
 }
+
 void swap(float *a, float *b)
 {
     float temp;
@@ -22,6 +24,7 @@ void swap(float *a, float *b)
     *a = *b;
     *b = temp;
 }
+
 void heapify(float a[], int n, int i)
 {
     int max = i; // Khoi tao root
@@ -47,6 +50,7 @@ void HeapSort(float a[], int n)
         heapify(a, i, 0);
     }
 }
+
 int main(){
     float a[10];
     int n;

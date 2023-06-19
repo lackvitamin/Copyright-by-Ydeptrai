@@ -1,25 +1,27 @@
 #include <stdio.h>
 
-void nhap(float a[], int n)
-{
+void nhap(float a[], int n) {
 	for(int i = 0; i < n; i++)
 	{
 		printf("Nhap so thu %d: ",i+1);
 		scanf("%f",&a[i]);
 	}
 }
-void xuat(float a[], int n){
+
+void xuat(float a[], int n) {
     printf("Day so: ");
     for(int i = 0; i < n; i++) printf(" %.2f",a[i]);
     printf("\n");
 }
+
 // Linear Search
 int LinearSearch(float a[], float x, int n){
     for(int i = 0; i < n; i++) if(a[i] == x) return i+1;
     return -1;
 }
+
 // Binary Search
-int BinarySearch(float a[], float x, int l, int r){
+int BinarySearch(float a[], float x, int l, int r) {
     int j = 0;
     if(r >= l)
     {
@@ -30,8 +32,9 @@ int BinarySearch(float a[], float x, int l, int r){
     }
     return -1;
 }
-int main()
-{   int n, p;
+
+int main() {
+    int n, p;
     float a[20], x;
     printf("Nhap so luong: ");
     scanf("%d",&n);
